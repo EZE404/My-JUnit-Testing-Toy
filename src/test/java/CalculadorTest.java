@@ -3,20 +3,15 @@ import org.junit.*;
 public class CalculadorTest {
 
     public static final double DELTA = 0.001;
-    private Calculador calculador;
+    private static Calculador calculador;
 
     @BeforeClass public static void beforeClass() {
         System.out.println("Operación iniciada");
-        //TODO Leer before()
-        //calculador = new Calculador();
+        calculador = new Calculador();
     }
 
     @Before
     public void before() {
-        //TODO Debería ir en @BeforeClass según el profe, pero pide que sea static CalculadorTest o Calculador
-        // pero si hacemos Calculador static, no tiene sentido instanciarlo.
-        calculador = new Calculador();
-
         //TODO ¿ESTO VA EN @Before? PORQUE SIEMPRE IMPRIME "before". Funciona si se pone en cada test.
         System.out.println(Thread.currentThread().getStackTrace()[1].getMethodName());
     }
@@ -27,7 +22,7 @@ public class CalculadorTest {
         int a = 15; int b = 20;
         int expectedResult = 35;
         double result = calculador.sumar(a, b);
-        Assert.assertEquals(expectedResult, result, 0.001);
+        Assert.assertEquals(expectedResult, result, DELTA);
     }
 
     @Test
