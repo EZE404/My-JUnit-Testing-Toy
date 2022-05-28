@@ -1,18 +1,18 @@
 public class Calculador {
 
-    public static double sumar(double a, double b) {
+    public double sumar(double a, double b) {
         return a + b;
     }
 
-    public static double restar(double a, double b) {
+    public double restar(double a, double b) {
         return a - b;
     }
 
-    public static double multiplicar(double a, double b) {
-        return a * b;
+    public long multiplicar(int a, int b) {
+        return (long) a * b;
     }
 
-    public static double dividir(double a, double b) {
+    public int dividir(int a, int b) {
         if (b == 0) {
             throw new IllegalArgumentException("No se puede dividir por 0, animal.");
         }
