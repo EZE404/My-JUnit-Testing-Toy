@@ -27,16 +27,28 @@ public class ParameterTest {
 
     @Parameterized.Parameters
     public static Iterable<Object[]> tomarDatos() {
-        return Arrays.asList(new Object[][] {{8, 7, 15}, {2, 0, 20}, {10, -1, -9}});
+        return Arrays.asList(new Object[][] {
+	        									{8, 7, 15}, 
+									        	{2, 0, 2},
+									        	{10, -1, -9},
+									        	{10, -1, 9}
+								        	});
     }
 
     @Test
     public void testSumaConParams() {
-        System.out.println(Thread.currentThread().getStackTrace()[1].getMethodName());
+        System.out.println(Thread.currentThread().getStackTrace()[1].getMethodName() + "con valores, a: "+ a +", y b: " + b);
         double result = calc.sumar(a, b);
         Assert.assertEquals(expResult, result, DELTA);
     }
-
+    
+//    @Test
+//    public void testDivConParams() {
+//        System.out.println(Thread.currentThread().getStackTrace()[1].getMethodName() + "con valores, a: "+ a +", y b: " + b);
+//        double result = calc.dividir(a, b);
+//        Assert.assertEquals(expResult, result, DELTA);
+//    }
+      
     @AfterClass
     public static void afterClass() {
         System.out.println("la operación ha finalizado");

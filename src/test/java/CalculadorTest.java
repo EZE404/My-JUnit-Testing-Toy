@@ -47,10 +47,10 @@ public class CalculadorTest {
     @Test
     public void testDivision() {
         System.out.println(Thread.currentThread().getStackTrace()[1].getMethodName());
-        int a = 56; int b = 10;
+        int a = 56; int b = 11;
         int expectedResult = 5;
-        int result = calculador.dividir(a, b);
-        Assert.assertEquals(expectedResult, result);
+        double result = calculador.dividir(a, b);
+        Assert.assertEquals(expectedResult, result, DELTA);
     }
 
     @After

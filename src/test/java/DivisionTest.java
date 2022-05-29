@@ -11,11 +11,11 @@ public class DivisionTest {
         calculador = new Calculador();
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test(expected = ArithmeticException.class)
     public void testDivisionCero() {
         System.out.println(Thread.currentThread().getStackTrace()[1].getMethodName());
-        int a = 15; int b = 0;
-        int result = calculador.dividir(a, b);
+        int a = 45; int b = 0;
+        double result = calculador.dividir(a, b);
     }
 
     @AfterClass
